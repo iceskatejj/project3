@@ -1,0 +1,33 @@
+Main.java
+- Takes in a string array, String[] args
+- If argument has a length greater than one --> tell player that they can only have one argument
+- If argument is has length of one --> call function playWithInputString in Game.java
+- If no arguments --> call playWithKeyboard in Game.java
+
+Game.java
+- playWithKeyboard
+    - Initializes game by calling initialize and drawGameMenu function in Game.java
+    - drawGameMenu is the game menu page
+    - If the player is not playing the game --> call parseMenuChoice
+- parseMenuChoice
+    - Asks user to enter seed if the player presses 'N', appends seed after N
+    - Displays the input on the screen as we can see the seed that we are typing updated on the game menu
+    - If player inputs 'S', initialize the world
+- playWithInputString
+    - Method for the autograder in which an input string will be a series of characters and should behave
+    the same as if the player typed the characters into
+
+World.java
+- World constructor
+    - calls BSPTree
+    - builds world with features
+- drawRowOfRooms
+    - top and bottom rows of room are walls
+    - middle of room is floor
+- drawTile to prevent overlapping of walls and floor
+
+BSPTree.java
+- Tree algorithm
+    - Splits leaves into children leaves --> split method
+    - Randomly generated rooms are located in the space of the leaf --> createRoom method
+    - Hallways are generated in connect two leaves that share the same parent and are added into a list --> createHallways method
